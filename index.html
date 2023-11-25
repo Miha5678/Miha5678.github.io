@@ -1,94 +1,68 @@
+<h1>Гонщик нелегальный!</h1>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой первый сайт</title>
+<style>
+.car {
+    width: 200px;
+    height: 70px;
+    position: absolute;
+    top: calc(95% - 38px);
+    left: -200px;
+    background-color: #ff0000;
+    animation: drive 5s linear forwards;
+}
+
+@keyframes drive {
+    0% {
+        left: 50px;
+    }
+    90% {
+        left: calc(100% - 250px);
+    }
+    100% {
+        left: calc(100% - 200px);
+    }
+}
+
+.wheel {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #000000;
+    position: absolute;
+    bottom: 0;
+}
+
+.wheel.left {
+    left: 10px;
+}
+
+.wheel.right {
+    right: 10px;
+}
+
+body {
+    background-color: skyblue;
+
+}
+.road {
+    position:fixed;
+    top: 100%;
+    left: -1000;
+    transform: translateY(-50%);
+    width: 1000%;
+    height: 30px;
+    background-color: black;
+}
+</style>
 </head>
-
 <body>
-    <style>
-        header{
-            display: flex;
-            justify-content: space-between;
-            justify-content: center;
-            margin-top: 40px;
-        }
-        .box {
-            width: 200px;
-            height: 200px;
-            background-color: brown;
-            margin: 5px;
-        }
-
-        .column {
-            display: flex;
-            flex-wrap: wrap;
-            width: 630px;
-            height: 50%;
-            text-align: center;
-            margin: 30px;
-
-        }
-
-        .h2 {
-            text-align: center;
-        }
-
-        @media(max-width: 600px) {
-            .column {
-                display: flex;
-                width: 600px;
-                flex-wrap: wrap;
-                height: 100%;
-            }
-
-            .box {
-                width: 200px;
-                height: 200px;
-                background-color: brown;
-            }
-        }
-
-        @media(min-width: 600px) {
-            .box {
-                width: 200px;
-                height: 200px;
-                background-color: brown;
-            }
-        }
-    </style>
-      <h2 class="h2">Таблица</h2>
-    <header>
-        <div class="column">
-            <div class="box">
-                <a class="a">1</a>
-                <h1 class="h12">Арбуз</h1>
-            </div>
-            <div class="box">
-                <a class="a">2</a>
-                <h1 class="h12">Абрикос</h1>
-            </div>
-            <div class="box">
-                <a class="a">3</a>
-                <h1 class="h12">Ананас</h1>
-            </div>
-            <div class="box">
-                <a class="a">4</a>
-                <h1 class="h12">Морковь</h1>
-            </div>
-            <div class="box">
-                <a class="a">5</a>
-                <h1 class="h12">Мандарин</h1>
-            </div>
-            <div class="box">
-                <a class="a">6</a>
-                <h1 class="h12">Маракуйя</h1>
-            </div>
-        </div>
-    </header>
+    <div class="car">
+    <div class="road"></div>
+    <div class="body"></div>
+        <div class="wheel left"></div>
+        <div class="wheel right"></div>
+    </div>
 </body>
-
 </html>
